@@ -8,11 +8,15 @@ let numeros = document.querySelector('.d1_area_3');
 
 let etapaAtual = 0;
 let numero = '';
+let votoBranco = false;
+let votos = [];
 
 function comecarEtapa() {
     let etapa = etapas[etapaAtual];
 
     let numeroHTML = '';
+    numero = '';
+    votoBranco = false;
 
     for(let i=0; i < etapa.numeros; i++) {
         if(i === 0) {
@@ -49,7 +53,11 @@ function atualizaInterface() {
            
         let fotosHtml = ''; 
         for(let i in candidato.fotos) {
-            fotosHtml += `<div class="d1_imagem"><img src="images/${candidato.fotos[i].url}" alt="">${candidato.fotos[i].legenda}</div>`
+            if(candidato.fotos[i].small) {
+                fotosHtml += `<div class="d1_imagem small"><img src="images/${candidato.fotos[i].url}" alt="">${candidato.fotos[i].legenda}</div>`
+            } else {
+                fotosHtml += `<div class="d1_imagem"><img src="images/${candidato.fotos[i].url}" alt="">${candidato.fotos[i].legenda}</div>`
+            }            
         }
 
         lateral.innerHTML = fotosHtml;
@@ -76,15 +84,49 @@ function clicou(n) {
 }
 
 function branco() {
-
+    if(numero === '') {
+        votoBranco = true;
+        seuVotoPara.style.display = 'block';
+        aviso.style.display = 'block';
+        numeros.innerHTML = '';
+        descricao.innerHTML = '<div class="aviso_grande pisca">VOTO EM BRANCO</div>';
+    } else {
+        alert("Para votar em BRANCO, não pode ter digitado nenhum número!");
+    }
 }
 
 function corrige() {
-
+    comecarEtapa();
 }
 
 function confirma() {
+    let etapa = etapas[etapaAtual];
 
+    let votoConfirmado = false;
+
+    if(votoBranco === true) {
+        votoConfirmado = true;
+        votos.push({
+            etapa: etapas[etapaAtual].titulo,
+            voto: 'branco'
+        });
+    } else if(numero.length === etapa.numeros) {
+        votoConfirmado = true;
+        votos.push({
+            etapa: etapas[etapaAtual].titulo,
+            voto: numero
+        });
+    }
+
+    if(votoConfirmado) {
+        etapaAtual++;
+        if(etapas[etapaAtual] !== undefined) {
+            comecarEtapa();
+        } else {
+            document.querySelector('.tela').innerHTML = '<div class="aviso_gigante pisca">FIM</div>';
+            console.log(votos);
+        }
+    }
 }
 
 comecarEtapa();
