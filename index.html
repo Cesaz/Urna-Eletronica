@@ -8,71 +8,93 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="urna">
-        <div class="tela">
-            <div class="d1">
-                <div class="d1_left">
-                    <div class="d1_area_1">
-                        <span>SEU VOTO PARA</span>
+    <section>
+        <div class="urna">
+            <div class="tela">
+                <div class="d1">
+                    <div class="d1_left">
+                        <div class="d1_area_1">
+                            <span>SEU VOTO PARA</span>
+                        </div>
+                        <div class="d1_area_2">
+                            <span>VEREADOR</span>
+                        </div>
+                        <div class="d1_area_3">
+                            <div class="numero pisca"></div>
+                            <div class="numero"></div>
+                        </div>
+                        <div class="d1_area_4">
+                            Nome: FULANO DE TAL<br/>
+                            Partido: QQQ<br/>
+                            Vice-Prefeito: BELTRANO DE TAL
+                        </div>
                     </div>
-                    <div class="d1_area_2">
-                        <span>VEREADOR</span>
-                    </div>
-                    <div class="d1_area_3">
-                        <div class="numero pisca"></div>
-                        <div class="numero"></div>
-                    </div>
-                    <div class="d1_area_4">
-                        Nome: FULANO DE TAL<br/>
-                        Partido: QQQ<br/>
-                        Vice-Prefeito: BELTRANO DE TAL
+                    <div class="d1_right">
+                        <div class="d1_imagem">
+                            <img src="images/84.jpg" alt="">
+                            Prefeito
+                        </div>
+                        <div class="d1_imagem small">
+                            <img src="images/84_2.jpg" alt="">
+                            Vice-Prefeito
+                        </div>
                     </div>
                 </div>
-                <div class="d1_right">
-                    <div class="d1_imagem">
-                        <img src="images/84.jpg" alt="">
-                        Prefeito
-                    </div>
-                    <div class="d1_imagem small">
-                        <img src="images/84_2.jpg" alt="">
-                        Vice-Prefeito
-                    </div>
+                <div class="d2">
+                    Aperte a tecla:<br/>
+                    CONFIRMA para CONFIRMAR este voto<br/>
+                    CORRIGE para REINICIAR este voto
                 </div>
             </div>
-            <div class="d2">
-                Aperte a tecla:<br/>
-                CONFIRMA para CONFIRMAR este voto<br/>
-                CORRIGE para REINICIAR este voto
+            <div class="teclado">
+                <div class="teclado_linha">
+                    <div class="teclado_botao" onclick="clicou('1')">1</div>
+                    <div class="teclado_botao" onclick="clicou('2')">2</div>
+                    <div class="teclado_botao" onclick="clicou('3')">3</div>
+                </div>
+                <div class="teclado_linha">
+                    <div class="teclado_botao" onclick="clicou('4')">4</div>
+                    <div class="teclado_botao" onclick="clicou('5')">5</div>
+                    <div class="teclado_botao" onclick="clicou('6')">6</div>
+                </div>
+                <div class="teclado_linha">
+                    <div class="teclado_botao" onclick="clicou('7')">7</div>
+                    <div class="teclado_botao" onclick="clicou('8')">8</div>
+                    <div class="teclado_botao" onclick="clicou('9')">9</div>
+                </div>
+                <div class="teclado_linha">
+                    <div class="teclado_botao" onclick="clicou('0')">0</div>
+                </div>
+                <div class="teclado_linha">
+                    <div class="teclado_botao botao_branco" onclick="branco()">BRANCO</div>
+                    <div class="teclado_botao botao_corrige" onclick="corrige()">CORRIGE</div>
+                    <div class="teclado_botao botao_confirma" onclick="confirma()">CONFIRMA</div>
+                </div>
             </div>
         </div>
-        <div class="teclado">
-            <div class="teclado_linha">
-                <div class="teclado_botao" onclick="clicou('1')">1</div>
-                <div class="teclado_botao" onclick="clicou('2')">2</div>
-                <div class="teclado_botao" onclick="clicou('3')">3</div>
-            </div>
-            <div class="teclado_linha">
-                <div class="teclado_botao" onclick="clicou('4')">4</div>
-                <div class="teclado_botao" onclick="clicou('5')">5</div>
-                <div class="teclado_botao" onclick="clicou('6')">6</div>
-            </div>
-            <div class="teclado_linha">
-                <div class="teclado_botao" onclick="clicou('7')">7</div>
-                <div class="teclado_botao" onclick="clicou('8')">8</div>
-                <div class="teclado_botao" onclick="clicou('9')">9</div>
-            </div>
-            <div class="teclado_linha">
-                <div class="teclado_botao" onclick="clicou('0')">0</div>
-            </div>
-            <div class="teclado_linha">
-                <div class="teclado_botao botao_branco" onclick="branco()">BRANCO</div>
-                <div class="teclado_botao botao_corrige" onclick="corrige()">CORRIGE</div>
-                <div class="teclado_botao botao_confirma" onclick="confirma()">CONFIRMA</div>
+    </section>
+
+    <section>
+        <div class="informacao">
+            <div class="info_candidatos">
+                Vereador: 38111 ou 77222<br/>
+                Prefeito: 99 ou 84 
             </div>
         </div>
-    </div>
+    </section>
+
+    <section>
+        <div class="personal_information">
+            <div class="social">
+                <a href="https://github.com/Cesaz" target="_blank"><img src="images/icons8-github-36(-hdpi).png" alt=""></a>
+                <a href="https://www.linkedin.com/in/cesaz/" target="_blank"><img src="images/icons8-linkedin-2-32.png" alt=""></a>
+            </div>
+            <span>Create by César Augusto</span>
+        </div>
+    </section>
 
     <script src="assets/js/etapas.js"></script>
     <script src="assets/js/script.js"></script>
+
 </body>
 </html>
