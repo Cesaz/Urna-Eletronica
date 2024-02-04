@@ -4,6 +4,8 @@ let descricao = document.querySelector('.d1_area_4'); // Description (element th
 let aviso = document.querySelector('.d2'); // Warning (element that displays messages or alerts)
 let lateral = document.querySelector('.d1_right'); // Sidebar (element that displays candidate photos)
 let numeros = document.querySelector('.d1_area_3'); // Numbers (element that displays the number input area)
+let confirmaAudio = document.querySelector('#confirma_audio');
+let fimAudio = document.querySelector('#fim_audio');
 
 let etapaAtual = 0; // Current stage (current step of the voting process)
 let numero = ''; // Number (current input number for the candidate)
@@ -99,8 +101,9 @@ function corrige() {
 
 function confirma() {
     let etapa = etapas[etapaAtual]; // Get the current stage data from the "etapas" array
-
     let votoConfirmado = false;
+
+    confirmaAudio.play()
 
     if (votoBranco === true) {
         votoConfirmado = true;
@@ -122,6 +125,7 @@ function confirma() {
             comecarEtapa(); // Move to the next stage if available
         } else {
             document.querySelector('.tela').innerHTML = '<div class="aviso_gigante pisca">FIM</div>'; // Display the end screen
+            fimAudio.play(); // Play the end screen sound effect
             console.log(votos); // Output the collected votes to the console
         }
     }

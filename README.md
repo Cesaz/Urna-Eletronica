@@ -6,7 +6,9 @@
 
 - Famosa Urna Eletrônica, usada nas eleições brasileiras.
 
-- **O projeto não está finalizado, ainda serão adicionados os sons**
+# **Creditos**
+
+- Meus agradecimentos ao [Professor Bonieky Lacerda](https://www.instagram.com/bonieky/) e a [B7Web](https://lp.b7web.com.br/fullstack).
 
 ------------------------------------------------------------------------------------------------------------------
 
@@ -18,4 +20,6 @@
 
 - The famous Electronic Voting Machine used in Brazilian elections.
 
-- **The project is not finalized yet, sounds will be added soon**.
+# **Credits**
+
+- My thanks to the [Teacher Bonieky Lacerda](https://www.instagram.com/bonieky/) and [B7Web](https://lp.b7web.com.br/fullstack).
